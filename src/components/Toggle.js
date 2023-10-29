@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
-function Toggle() {
-  return <button>OFF</button>;
+export default function Toggle() {
+  const [isOn, setIsOn] = useState(true);
+  const handleToggle = () => {
+    setIsOn(!isOn);
+  };
+  return <button onClick={handleToggle}>{isOn ? "ON" : "OFF"}</button>;
 }
-
-export default Toggle;
